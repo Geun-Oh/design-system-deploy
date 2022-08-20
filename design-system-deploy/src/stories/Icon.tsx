@@ -170,7 +170,7 @@ Icon.defaultProps = {
     fill: "#000000",
 };
 
-const scaleControl = (scale: any) => css`
+const scaleControl = (scale: number | undefined) => css`
     transform: scale(${scale});
 `
 

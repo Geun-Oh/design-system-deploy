@@ -23,7 +23,7 @@ export const Card = ({ themeType, head, icon, title, width, detail, confirmButto
 
     return (
         <div>
-            <div css={style({ width, image, theme })} className='cardwrapper'>
+            <div css={style(width, image, theme)} className='cardwrapper'>
                 {head === undefined ? null : <div className='headwrapper' style={{ backgroundColor: theme.BackgroundColor, color: theme.Color }}>{head}</div>}
                 {icon === undefined ? null : <div className='iconwrapper'>
                     <Icon type={icon} scale={2.5} fill={theme.Color} />
@@ -32,7 +32,7 @@ export const Card = ({ themeType, head, icon, title, width, detail, confirmButto
                 <span>{detail}</span>
                 {image === false && confirmButton === true ? <Button label="Submit"/> : null}
             </div>
-            {image === false ? null : <div css={imgStyle({ width, imgUrl })}>
+            {image === false ? null : <div css={imgStyle(width, imgUrl)}>
                 {confirmButton === false ? null : <Button label="Submit" />}
             </div>}
         </div>
@@ -48,7 +48,7 @@ Card.defaultProps = {
     imgUrl: image1,
 }
 
-const style = ({ width, image, theme }: any) => css`
+const style = (width: number, image: boolean, theme: any) => css`
     box-shadow: ${BaseStyles.Shadow.BottomDefault};
     transition-duration: 0.5s;
     border: none;
@@ -88,7 +88,7 @@ const style = ({ width, image, theme }: any) => css`
     }
 `
 
-const imgStyle = ({ width, imgUrl }: any) => css`
+const imgStyle = (width: number, imgUrl: string | null) => css`
     width: ${width}px;
     height: ${width * 0.8}px;
     padding: 1rem 1rem;

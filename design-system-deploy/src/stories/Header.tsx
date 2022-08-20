@@ -3,7 +3,6 @@ import React from 'react';
 import { jsx, css } from '@emotion/react';
 import { BaseStyles, Themes } from "../themes";
 import { Icon, IconProps } from "./Icon";
-import { string } from 'prop-types';
 
 type ThemeType = "lightMode" | "darkMode";
 
