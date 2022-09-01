@@ -1,20 +1,29 @@
 /** @jsxImportSource @emotion/react */
 import React from 'react';
-import { jsx, css } from '@emotion/react';
+import { css } from '@emotion/react';
 import { BaseStyles, Themes, ThemeType } from "../themes";
 import { Icon, IconProps } from "./Icon";
 
 type InputType = "textInput" | "date" | "phoneNumber" | "password" | "searchField" | "inputWithSteper" | "textAreaInput";
 
 interface InputProps {
+    /**라이트모드와 다크모드를 설정해주세요. */
     themeType: ThemeType;
+    /**타입을 정해주세요. */
     type: InputType;
+    /**인풋의 너비를 지정해주세요. "100px", "50vw"와 같이 단위를 포함한 string으로 입력해야합니다. */
     width: string;
+    /**아이콘의 타입을 설정해주세요. */
     icon?: IconProps["type"];
+    /**인풋의 이름을 지정해주세요. 백엔드와의 통신에 제출할 폼에서 유용하게 사용됩니다. */
     name?: string;
+    /**인풋의 높이를 지정해주세요. "100px", "50vw"와 같이 단위를 포함한 string으로 입력해야합니다. */
     height?: string;
 }
-
+type Theme = typeof Themes.LightMode;
+/**
+ * 상황에 맞게 커스텀하여 사용해주세요.
+ */
 export const Input = ({ themeType, type, width, icon, name, height }: InputProps) => {
     const theme = themeType === "lightMode" ? Themes.LightMode : Themes.DarkMode;
     const [passwordType, setPasswordType] = React.useState("password");
@@ -40,25 +49,25 @@ export const Input = ({ themeType, type, width, icon, name, height }: InputProps
     switch (type) {
         case "textInput":
             return (
-                <div css={style({ width, theme })}>
+                <div css={style(width, theme)}>
                     <input css={textInputStyle(theme)} placeholder="Input Text" type="text" name={name}></input>
                 </div>
             )
         case "date":
             return (
-                <div css={style({ width, theme })}>
+                <div css={style(width, theme)}>
                     <input css={textInputStyle(theme)} type="date" name={name}></input>
                 </div>
             )
         case "phoneNumber":
             return (
-                <div css={style({ width, theme })}>
+                <div css={style(width, theme)}>
                     <input css={textInputStyle(theme)} type="text" onChange={handlePress} value={inputValue} placeholder="010-1234-5678" maxLength={13} />
                 </div>
             )
         case "password":
             return (
-                <div css={style({ width, theme })}>
+                <div css={style(width, theme)}>
                     <input type={passwordType} css={textInputStyle(theme)} name={name} />
                     <button onMouseDown={() => setPasswordType("text")} onMouseUp={() => setPasswordType("password")} style={{ width: "16px", height: "16px", border: "none", outline: "none", background: "none" }}>
                         <Icon type="eye" />
@@ -67,14 +76,14 @@ export const Input = ({ themeType, type, width, icon, name, height }: InputProps
             )
         case "searchField":
             return (
-                <div css={style({ width, theme })}>
+                <div css={style(width, theme)}>
                     <Icon type="magnifyingGlass" />
                     <input css={textInputStyle(theme)} style={{ paddingLeft: "16px" }} placeholder="Search..." type="text" name={name}></input>
                 </div>
             )
         case "inputWithSteper":
             return (
-                <div css={style({ width: "80px", theme })}>
+                <div css={style(width="80px", theme)}>
                     <div css={textInputStyle(theme)}>{stepNumber}</div>
                     <div className='steperwrapper' css={steperWrapperStyle(theme)}>
                         <button onClick={() => setStepNumber(prev => prev + 1)}>
@@ -88,8 +97,8 @@ export const Input = ({ themeType, type, width, icon, name, height }: InputProps
             )
         case "textAreaInput":
             return (
-                <div css={textAreaStyle({ width, theme })}>
-                    <textarea css={textAreaInputStyle({ height, theme })} placeholder="Input Text" name={name}></textarea>
+                <div css={textAreaStyle(width, theme)}>
+                    <textarea css={textAreaInputStyle(height!, theme)} placeholder="Input Text" name={name}></textarea>
                 </div>
             )
         default:
@@ -103,7 +112,7 @@ Input.defaultProps = {
     height: "300px",
 }
 
-const style = ({ width, theme }: any) => css`
+const style = (width: string, theme: Theme) => css`
     width: ${width};
     background-color: ${theme.BackgroundColor};
     color: ${theme.Color};
@@ -115,7 +124,7 @@ const style = ({ width, theme }: any) => css`
     justify-content: flex-start;
     align-items: center;
     padding: 1rem;
-    border-radius: 6px;
+    border-radius: 1rem;
     &:hover {
         border: 1px solid ${BaseStyles.Color.Beige2};
     }
@@ -124,7 +133,7 @@ const style = ({ width, theme }: any) => css`
     }
 `
 
-const textInputStyle = (theme: any) => css`
+const textInputStyle = (theme: Theme) => css`
     width: 100%;
     background-color: ${theme.BackgroundColor};
     color: ${theme.Color};
@@ -135,7 +144,7 @@ const textInputStyle = (theme: any) => css`
     text-decoration: none;
 `
 
-const steperWrapperStyle = (theme: any) => css`
+const steperWrapperStyle = (theme: Theme) => css`
     box-shadow: ${BaseStyles.Shadow.BottomDefault};
     background-color: ${theme.BackgroundColor};
     color: ${theme.Color};
@@ -156,7 +165,7 @@ const steperWrapperStyle = (theme: any) => css`
     }
 `
 
-const textAreaStyle = ({ width, theme }: any) => css`
+const textAreaStyle = (width: string, theme: Theme) => css`
 background-color: ${theme.BackgroundColor};
 color: ${theme.Color};
 width: ${width};
@@ -175,7 +184,7 @@ textarea::placeholder {
 }
 `
 
-const textAreaInputStyle = ({ height, theme }: any) => css`
+const textAreaInputStyle = (height: string, theme: Theme) => css`
 background-color: ${theme.BackgroundColor};
 color: ${theme.Color};
 width: 100%;

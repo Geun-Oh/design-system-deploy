@@ -17,19 +17,19 @@ import { jsx as _jsx, jsxs as _jsxs } from "@emotion/react/jsx-runtime";
 import { css } from '@emotion/react';
 import { BaseStyles } from "../themes";
 import { Icon } from './Icon';
+/**
+ * 기본 타입을 선택해 사용하거나 직접 커스텀할 수 있습니다.
+ */
 export var Button = function (_a) {
-    var onClick = _a.onClick, label = _a.label, width = _a.width, height = _a.height, theme = _a.theme, iconType = _a.iconType, backgroundColor = _a.backgroundColor, color = _a.color, hoverColor = _a.hoverColor;
-    return (_jsxs("button", __assign({ css: [style({ width: width, height: height, backgroundColor: backgroundColor, color: color, hoverColor: hoverColor }), themes[theme]], onClick: onClick }, { children: [label, _jsx("div", __assign({ css: iconStyle(iconType) }, { children: _jsx(Icon, { type: iconType }) }))] })));
+    var onClick = _a.onClick, innerText = _a.innerText, width = _a.width, height = _a.height, theme = _a.theme, iconType = _a.iconType, backgroundColor = _a.backgroundColor, color = _a.color, hoverColor = _a.hoverColor;
+    return (_jsxs("button", __assign({ css: [style(width, height, backgroundColor, color, hoverColor), themes[theme]], onClick: onClick }, { children: [innerText, _jsx("div", __assign({ css: iconStyle(iconType) }, { children: _jsx(Icon, { type: iconType }) }))] })));
 };
 Button.defaultProps = {
     iconType: "none",
     backgroundColor: "#FFFFFF",
 };
 var iconStyle = function (iconType) { return css(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  ", ";\n"], ["\n  ", ";\n"])), iconType === "none" ? null : "padding-left: 16px"); };
-var style = function (_a) {
-    var width = _a.width, height = _a.height, backgroundColor = _a.backgroundColor, color = _a.color, hoverColor = _a.hoverColor;
-    return css(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  box-shadow: ", ";\n  transition-duration: 0.5s;\n  outline: none;\n  border: none;\n  box-sizing: border-box;\n  background: ", ";\n  color: ", ";\n  width: ", ";\n  height: ", ";\n  font-size: ", ";\n  font-family: ", ";\n  font-weight: ", ";\n  padding: 0.5rem 1rem;\n  border-radius: 6px;\n  line-height: auto;\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  align-items: center;\n  &:hover {\n    color: ", ";\n  }\n"], ["\n  box-shadow: ", ";\n  transition-duration: 0.5s;\n  outline: none;\n  border: none;\n  box-sizing: border-box;\n  background: ", ";\n  color: ", ";\n  width: ", ";\n  height: ", ";\n  font-size: ", ";\n  font-family: ", ";\n  font-weight: ", ";\n  padding: 0.5rem 1rem;\n  border-radius: 6px;\n  line-height: auto;\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  align-items: center;\n  &:hover {\n    color: ", ";\n  }\n"])), BaseStyles.Shadow.BottomDefault, backgroundColor, color, width, height, BaseStyles.Text.Heading4, BaseStyles.Font.FiraCode, BaseStyles.Text.Border4, hoverColor);
-};
+var style = function (width, height, backgroundColor, color, hoverColor) { return css(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  box-shadow: ", ";\n  transition-duration: 0.5s;\n  outline: none;\n  border: none;\n  box-sizing: border-box;\n  background: ", ";\n  color: ", ";\n  width: ", ";\n  height: ", ";\n  font-size: ", ";\n  font-family: ", ";\n  font-weight: ", ";\n  padding: 0.5rem 1rem;\n  border-radius: 1rem;\n  line-height: auto;\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  align-items: center;\n  &:hover {\n    background: ", ";\n  }\n"], ["\n  box-shadow: ", ";\n  transition-duration: 0.5s;\n  outline: none;\n  border: none;\n  box-sizing: border-box;\n  background: ", ";\n  color: ", ";\n  width: ", ";\n  height: ", ";\n  font-size: ", ";\n  font-family: ", ";\n  font-weight: ", ";\n  padding: 0.5rem 1rem;\n  border-radius: 1rem;\n  line-height: auto;\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  align-items: center;\n  &:hover {\n    background: ", ";\n  }\n"])), BaseStyles.Shadow.BottomDefault, backgroundColor || "#ffffff", color || BaseStyles.Color.Black4, width, height, BaseStyles.Text.Heading4, BaseStyles.Font.FiraCode, BaseStyles.Text.Border4, hoverColor || BaseStyles.Color.Beige1); };
 var themes = {
     none: css(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  "], ["\n  "]))),
     default: css(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n    color: ", ";\n    &:hover {\n      background: ", ";\n    }\n    &:active {\n      background: ", ";\n    }\n  "], ["\n    color: ", ";\n    &:hover {\n      background: ", ";\n    }\n    &:active {\n      background: ", ";\n    }\n  "])), BaseStyles.Color.Black4, BaseStyles.Color.Beige1, BaseStyles.Color.Beige3),

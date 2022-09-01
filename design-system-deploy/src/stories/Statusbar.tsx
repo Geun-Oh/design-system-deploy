@@ -1,29 +1,37 @@
 /** @jsxImportSource @emotion/react */
 import React from 'react';
-import { jsx, css } from '@emotion/react';
+import { css } from '@emotion/react';
 import { BaseStyles } from "../themes";
 import { Icon } from "./Icon";
 
-interface AccordionProps {
+interface StatusbarProps {
+    /**원하는 텍스트를 입력해주세요. */
     innerText: string;
+    /**아코디언의 너비를 지정해주세요. "100px", "50vw"와 같이 단위를 포함한 string으로 입력해야합니다. */
     width: string;
+    /**추가적인 하이퍼링크나 액션이 필요할 때 사용합니다. 원하는 텍스트를 입력해주세요. */
     extraAction?: string;
+    /**액션의 트리거가 될 링크를 입력해주세요. */
     src: string;
+    /**로딩중인지 여부를 나타내기 위해 사용합니다. */
     loading: boolean;
 }
+/**
+ * 특정 상태에 대한 로딩 여부를 판단하거나 다른 페이지로 리디렉션 할 수 있습니다.
+ */
+export const Statusbar = ({ innerText, width, extraAction, src, loading }: StatusbarProps) => {
 
-export const Accordion = ({ innerText, width, extraAction, src, loading }: AccordionProps) => {
     return (
         <div css={style(width)}>
             <p>{innerText}</p>
             {src && extraAction ? <a href={src} style={{ textDecoration: "none" }} ><p style={{ color: `${BaseStyles.Color.Orange3}` }}>{extraAction}</p></a> : null}
-            <Icon type={loading === true ? "loading" : "angleDown"} />
+                {loading === true ? <Icon type="loading" scale={1.5} /> : null}
         </div>
     )
 }
 
-Accordion.defaultProps = {
-    innerText: "Accordion InnerText",
+Statusbar.defaultProps = {
+    innerText: "Statusbar InnerText",
     width: "300px",
     loading: false,
 };
@@ -47,6 +55,12 @@ const style = (width: string) => css`
     line-height: 1;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
+    button {
+        outline: none;
+        border: none;
+        background: none;
+        transform: translate(10px, -2px);
+    }
 `

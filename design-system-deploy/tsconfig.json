@@ -20,7 +20,8 @@
     "noEmit": false, // 출력을 내보내겠다고 선언해주는 것. 이래야 우리가 만든 모듈이 외부로 나갈 수 있다.
     "declaration": true, // d.ts 파일 생성을 하고자 한다. 타입 정의가 필요한 확장자가 있으니까!
     "outDir": "./dist", // ts 명령어로 컴파일된 파일들이 어디에 위치할 것인지에 대한 설정. dist 폴더에 두기 위해 이처럼 설정한다.
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "types": ["@emotion/react/types/css-prop"],
   },
   "include": [
     "src",

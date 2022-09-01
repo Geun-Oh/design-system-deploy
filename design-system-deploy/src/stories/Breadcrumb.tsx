@@ -1,9 +1,10 @@
 /** @jsxImportSource @emotion/react */
 import React from 'react';
-import { jsx, css } from '@emotion/react';
+import { css } from '@emotion/react';
 import { BaseStyles } from "../themes";
 
 interface BreadcrumbProps {
+    /**메인 페이지로부터 현재 위치한 곳까지의 주소를 입력해주세요. */
     params: string[];
 }
 
