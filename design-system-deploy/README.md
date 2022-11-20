@@ -29,3 +29,17 @@ Beta version updated...
 ### ver-0.2.2(22.09.01)
 
 - "Theme isn't providing" Issue fixed.
+
+### ver-0.3.0(22.11.20)
+
+- Default export config fixed.
+- .png type error fixed.
+- main export component added.
+- "Inter" font added.
+- Dropdown component props drilling sturcture fixed.
+- Input component props drilling sturcture fixed.
+- Box, Flex, Text component added.
+
+### ver-0.3.1(22.11.20)
+
+- publish folder hotfix.

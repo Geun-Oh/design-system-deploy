@@ -41,6 +41,7 @@ export declare const BaseStyles: {
         NotoSans: string;
         NotoSansKR: string;
         BlackHanSans: string;
+        Inter: string;
     };
     Shadow: {
         BottomDefault: string;
