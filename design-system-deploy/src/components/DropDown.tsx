@@ -11,14 +11,14 @@ export interface DropDownProps {
     /**드롭다운의 너비를 지정해주세요. "100px", "50vw"와 같이 단위를 포함한 string으로 입력해야합니다.  */
     width: string;
     /**드롭다운의 활성화 여부를 선택해주세요. */
-    disabled: boolean;
+    disabled?: boolean;
     /**드롭다운이 다수의 선택지를 가질 수 있는지 여부를 선택해주세요. */
     multiSelect: boolean;
     /**선택 값이 변경되었을 때 값을 이용해 수행할 로직을 지정해주세요. */
     onChange: (e: any) => any;
 }
 
-const DropDown = ({ options, width, disabled, multiSelect, onChange }: DropDownProps) => {
+const DropDown = ({ options = ["React.js", "Vue.js", "Angular.js"], width = "300px", disabled = false, multiSelect = false, onChange }: DropDownProps) => {
     const [selected, setSelected] = useState<string>("");
     const [multiSelected, setMultiSelected] = useState<string[]>([]);
     const [multiOptions, setMultiOptions] = useState<string[]>(options);
@@ -87,13 +87,6 @@ const DropDown = ({ options, width, disabled, multiSelect, onChange }: DropDownP
             </div>
         )
     }
-}
-
-DropDown.defaultProps = {
-    options: ["React.js", "Vue.js", "Angular.js"],
-    disabled: false,
-    width: "300px",
-    multiSelect: false,
 }
 
 const optionStyle = ({ width, toggled, multiOptions, multiSelect }: { width: string, toggled: boolean, multiOptions?: string[], multiSelect: boolean }) =>  css`

@@ -12,7 +12,7 @@ export interface CheckboxProps {
     scale: number;
 }
 
-const Checkbox = ({ fill, checked, scale }: CheckboxProps) => {
+const Checkbox = ({ fill = "#000000", checked = false, scale }: CheckboxProps) => {
 
     const [isChecked, setIsChecked] = React.useState(checked);
     return (
@@ -25,11 +25,6 @@ const Checkbox = ({ fill, checked, scale }: CheckboxProps) => {
             </div>
         </div>
     )
-}
-
-Checkbox.defaultProps = {
-    fill: "#000000",
-    checked: false,
 }
 
 const scaleControl = (scale: number) => css`

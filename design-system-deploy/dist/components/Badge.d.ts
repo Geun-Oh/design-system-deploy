@@ -13,13 +13,5 @@ export interface BadgeProps {
 /**
  * 상황에 맞게 타입을 설정하여 사용하세요!
  */
-declare const Badge: {
-    ({ innerText, state, width, type }: BadgeProps): import("@emotion/react/jsx-runtime").JSX.Element;
-    defaultProps: {
-        innerText: string;
-        state: string;
-        width: string;
-        type: string;
-    };
-};
+declare const Badge: ({ innerText, state, width, type }: BadgeProps) => import("@emotion/react/jsx-runtime").JSX.Element;
 export default Badge;

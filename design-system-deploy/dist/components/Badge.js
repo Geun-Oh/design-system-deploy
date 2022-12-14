@@ -20,7 +20,7 @@ import { BaseStyles } from "../themes";
  * 상황에 맞게 타입을 설정하여 사용하세요!
  */
 var Badge = function (_a) {
-    var innerText = _a.innerText, state = _a.state, width = _a.width, type = _a.type;
+    var _b = _a.innerText, innerText = _b === void 0 ? "Badge InnerText" : _b, _c = _a.state, state = _c === void 0 ? "Access" : _c, _d = _a.width, width = _d === void 0 ? "300px" : _d, _e = _a.type, type = _e === void 0 ? "default" : _e;
     var style = function () { return css(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n    box-shadow: ", ";\n    transition-duration: 0.5s;\n    outline: none;\n    border: none;\n    width: ", ";\n    box-sizing: border-box;\n    background: white;\n    padding: 12px 16px;\n    border-radius: 1rem;\n    height: 48px;\n    font-size: ", ";\n    font-family: ", ";\n    font-weight: ", ";\n    div {\n        ", "\n    }\n    "], ["\n    box-shadow: ", ";\n    transition-duration: 0.5s;\n    outline: none;\n    border: none;\n    width: ", ";\n    box-sizing: border-box;\n    background: white;\n    padding: 12px 16px;\n    border-radius: 1rem;\n    height: 48px;\n    font-size: ", ";\n    font-family: ", ";\n    font-weight: ", ";\n    div {\n        ", "\n    }\n    "])), BaseStyles.Shadow.BottomDefault, width, BaseStyles.Text.Heading4, BaseStyles.Font.FiraCode, BaseStyles.Text.Border0, type === "default" ? "\n        position: relative;\n        float: right;\n        transition-duration: 0.5s;\n        transform: translate(16px, -24px);\n        background: ".concat(badgeTheme[state], ";\n        border-radius: 1px soild black;\n        width: 24px;\n        height: 24px;\n        border-radius: 12px;\n        ") :
         type === "textInner" ? "\n        position: relative;\n        float: right;\n        transition-duration: 0.5s;\n        transform: translate(16px, -24px);\n        background: ".concat(badgeTheme[state], ";\n        border-radius: 1px soild black;\n        height: 24px;\n        padding: 0 12px 0 12px;\n        border-radius: 12px;\n        color: white;\n        font-size: ").concat(BaseStyles.Text.Heading4, ";\n        font-family: ").concat(BaseStyles.Font.FiraCode, ";\n        font-weight: ").concat(BaseStyles.Text.Border0, ";\n        ") : "\n        position: relative;\n        float: right;\n        transition-duration: 0.5s;\n        background: ".concat(badgeTheme[state], ";\n        border-radius: 1px soild black;\n        height: 24px;\n        padding: 0 12px 0 12px;\n        border-radius: 12px;\n        color: white;\n        font-size: ").concat(BaseStyles.Text.Heading4, ";\n        font-family: ").concat(BaseStyles.Font.FiraCode, ";\n        font-weight: ").concat(BaseStyles.Text.Border0, ";\n        ")); };
     var badgeTheme = {
@@ -53,12 +53,6 @@ var Badge = function (_a) {
         return (_jsxs("div", __assign({ css: style() }, { children: [innerText, _jsx("div", __assign({ css: badgeTheme }, { children: badgeInnerText() }))] })));
     }
     return (_jsxs("div", __assign({ css: style() }, { children: [innerText, _jsx("div", { css: badgeTheme })] })));
-};
-Badge.defaultProps = {
-    innerText: "Badge InnerText",
-    state: "Access",
-    width: "300px",
-    type: "default",
 };
 export default Badge;
 var templateObject_1;

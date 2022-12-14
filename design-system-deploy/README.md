@@ -43,3 +43,9 @@ Beta version updated...
 ### ver-0.3.1(22.11.20)
 
 - publish folder hotfix.
+
+### ver-0.4.0(22.12.14)
+
+- Changed components that return object type because of default props. All components return funtion type from now on.
+- Fixed prop "themeType" of Input component to be optional. 
+- Fixed prop "disabled" of DropDown component to be optional.

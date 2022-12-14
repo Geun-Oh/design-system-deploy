@@ -8,16 +8,12 @@ export interface BreadcrumbProps {
     params: string[];
 }
 
-const Breadcrumb = ({ params }: BreadcrumbProps) => {
+const Breadcrumb = ({ params = ["Home"] }: BreadcrumbProps) => {
     return (
         <div css={style(params)}>
             {paramElement(params)}
         </div>
     )
-}
-
-Breadcrumb.defaultProps = {
-    params: ["Home"],
 }
 
 const paramElement = (params: string[]): JSX.Element | JSX.Element[] | null => {

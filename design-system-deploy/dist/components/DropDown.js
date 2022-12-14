@@ -30,11 +30,11 @@ import { BaseStyles } from "../themes";
 import Icon from "./Icon";
 import MarginBox from './Marginbox';
 var DropDown = function (_a) {
-    var options = _a.options, width = _a.width, disabled = _a.disabled, multiSelect = _a.multiSelect, onChange = _a.onChange;
-    var _b = useState(""), selected = _b[0], setSelected = _b[1];
-    var _c = useState([]), multiSelected = _c[0], setMultiSelected = _c[1];
-    var _d = useState(options), multiOptions = _d[0], setMultiOptions = _d[1];
-    var _e = useState(false), toggled = _e[0], setToggled = _e[1];
+    var _b = _a.options, options = _b === void 0 ? ["React.js", "Vue.js", "Angular.js"] : _b, _c = _a.width, width = _c === void 0 ? "300px" : _c, _d = _a.disabled, disabled = _d === void 0 ? false : _d, _e = _a.multiSelect, multiSelect = _e === void 0 ? false : _e, onChange = _a.onChange;
+    var _f = useState(""), selected = _f[0], setSelected = _f[1];
+    var _g = useState([]), multiSelected = _g[0], setMultiSelected = _g[1];
+    var _h = useState(options), multiOptions = _h[0], setMultiOptions = _h[1];
+    var _j = useState(false), toggled = _j[0], setToggled = _j[1];
     var onClick = function () { return disabled ? null : setToggled(function (prev) { return !prev; }); };
     var angle = disabled ? "xmark" : toggled ? "angleLeft" : "angleDown";
     var angleForMultiSelection = disabled ? "xmark" : toggled ? "angleDown" : "angleRight";
@@ -65,12 +65,6 @@ var DropDown = function (_a) {
                             } }, { children: item }), index);
                     }) }))] })));
     }
-};
-DropDown.defaultProps = {
-    options: ["React.js", "Vue.js", "Angular.js"],
-    disabled: false,
-    width: "300px",
-    multiSelect: false,
 };
 var optionStyle = function (_a) {
     var width = _a.width, toggled = _a.toggled, multiOptions = _a.multiOptions, multiSelect = _a.multiSelect;

@@ -9,7 +9,7 @@ type Theme = typeof Themes.LightMode;
 
 export interface InputProps {
     /**라이트모드와 다크모드를 설정해주세요. */
-    themeType: ThemeType;
+    themeType?: ThemeType;
     /**타입을 정해주세요. */
     type: InputType;
     /**인풋의 너비를 지정해주세요. "100px", "50vw"와 같이 단위를 포함한 string으로 입력해야합니다. */
@@ -25,9 +25,7 @@ export interface InputProps {
     onChange: (e: any) => any;
 }
 
-
-
-const Input = ({ themeType, type, width, icon, name, value, numberValue, height, onChange }: InputProps) => {
+const Input = ({ themeType = "lightMode", type = "textInput", width = "300px", icon, name = "text", value = "", numberValue = 0, height = "300px", onChange }: InputProps) => {
     const theme = themeType === "lightMode" ? Themes.LightMode : Themes.DarkMode;
     const [passwordType, setPasswordType] = React.useState("password");
     const [inputValue, setInputValue] = React.useState<string>(value!);
@@ -124,16 +122,6 @@ const Input = ({ themeType, type, width, icon, name, value, numberValue, height,
         default:
             return null;
     }
-}
-
-Input.defaultProps = {
-    themeType: "lightMode",
-    width: "300px",
-    height: "300px",
-    type: "textInput",
-    value: "",
-    numberValue: 0,
-    name: "text",
 }
 
 const style = (width: string, theme: Theme) => css`

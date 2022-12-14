@@ -13,12 +13,5 @@ export interface StatusbarProps {
 /**
  * 특정 상태에 대한 로딩 여부를 판단하거나 다른 페이지로 리디렉션 할 수 있습니다.
  */
-declare const Statusbar: {
-    ({ innerText, width, extraAction, src, loading }: StatusbarProps): import("@emotion/react/jsx-runtime").JSX.Element;
-    defaultProps: {
-        innerText: string;
-        width: string;
-        loading: boolean;
-    };
-};
+declare const Statusbar: ({ innerText, width, extraAction, src, loading }: StatusbarProps) => import("@emotion/react/jsx-runtime").JSX.Element;
 export default Statusbar;

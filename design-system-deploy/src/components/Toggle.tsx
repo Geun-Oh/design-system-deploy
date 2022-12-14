@@ -16,7 +16,7 @@ export interface ToggleProps {
 
 const Toggle = ({ type, toggled, scale }: ToggleProps) => {
     
-    const [ isToggled, setIsToggled ] = React.useState(!toggled);
+    const [ isToggled, setIsToggled ] = React.useState<boolean>(!toggled);
     const typeColor: string[] = type === "Basic" ? ["#D9D9D9", "#00FF19"] : ["#FF3D3D", "#00FF19"];
 
     return (

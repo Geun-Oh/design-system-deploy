@@ -19,7 +19,7 @@ export interface StatusbarProps {
 /**
  * 특정 상태에 대한 로딩 여부를 판단하거나 다른 페이지로 리디렉션 할 수 있습니다.
  */
-const Statusbar = ({ innerText, width, extraAction, src, loading }: StatusbarProps) => {
+const Statusbar = ({ innerText = "Statusbar InnerText", width = "300px", extraAction, src, loading = false }: StatusbarProps) => {
 
     return (
         <div css={style(width)}>
@@ -29,12 +29,6 @@ const Statusbar = ({ innerText, width, extraAction, src, loading }: StatusbarPro
         </div>
     )
 }
-
-Statusbar.defaultProps = {
-    innerText: "Statusbar InnerText",
-    width: "300px",
-    loading: false,
-};
 
 const style = (width: string) => css`
     box-shadow: ${BaseStyles.Shadow.BottomDefault};

@@ -25,11 +25,5 @@ export interface ButtonProps {
 /**
  * 기본 타입을 선택해 사용하거나 직접 커스텀할 수 있습니다.
  */
-declare const Button: {
-    ({ onClick, innerText, width, height, theme, iconType, backgroundColor, color, hoverColor }: ButtonProps): import("@emotion/react/jsx-runtime").JSX.Element;
-    defaultProps: {
-        iconType: string;
-        backgroundColor: string;
-    };
-};
+declare const Button: ({ onClick, innerText, width, height, theme, iconType, backgroundColor, color, hoverColor }: ButtonProps) => import("@emotion/react/jsx-runtime").JSX.Element;
 export default Button;

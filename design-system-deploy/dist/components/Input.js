@@ -20,11 +20,11 @@ import { css } from '@emotion/react';
 import { BaseStyles, Themes } from "../themes";
 import Icon from "./Icon";
 var Input = function (_a) {
-    var themeType = _a.themeType, type = _a.type, width = _a.width, icon = _a.icon, name = _a.name, value = _a.value, numberValue = _a.numberValue, height = _a.height, onChange = _a.onChange;
+    var _b = _a.themeType, themeType = _b === void 0 ? "lightMode" : _b, _c = _a.type, type = _c === void 0 ? "textInput" : _c, _d = _a.width, width = _d === void 0 ? "300px" : _d, icon = _a.icon, _e = _a.name, name = _e === void 0 ? "text" : _e, _f = _a.value, value = _f === void 0 ? "" : _f, _g = _a.numberValue, numberValue = _g === void 0 ? 0 : _g, _h = _a.height, height = _h === void 0 ? "300px" : _h, onChange = _a.onChange;
     var theme = themeType === "lightMode" ? Themes.LightMode : Themes.DarkMode;
-    var _b = React.useState("password"), passwordType = _b[0], setPasswordType = _b[1];
-    var _c = React.useState(value), inputValue = _c[0], setInputValue = _c[1];
-    var _d = React.useState(numberValue), stepNumber = _d[0], setStepNumber = _d[1];
+    var _j = React.useState("password"), passwordType = _j[0], setPasswordType = _j[1];
+    var _k = React.useState(value), inputValue = _k[0], setInputValue = _k[1];
+    var _l = React.useState(numberValue), stepNumber = _l[0], setStepNumber = _l[1];
     var numberInputRef = useRef(null);
     React.useEffect(function () {
         if (inputValue.length === 10) {
@@ -73,15 +73,6 @@ var Input = function (_a) {
         default:
             return null;
     }
-};
-Input.defaultProps = {
-    themeType: "lightMode",
-    width: "300px",
-    height: "300px",
-    type: "textInput",
-    value: "",
-    numberValue: 0,
-    name: "text",
 };
 var style = function (width, theme) { return css(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n    width: ", ";\n    background-color: ", ";\n    color: ", ";\n    box-shadow: ", ";\n    transition-duration: 0.5s;\n    border: 0.3px solid ", ";\n    display: flex;\n    flex-direction: row;\n    justify-content: flex-start;\n    align-items: center;\n    padding: 1rem;\n    border-radius: 1rem;\n    &:hover {\n        border: 1px solid ", ";\n    }\n    input::placeholder {\n        color: ", ";\n    }\n"], ["\n    width: ", ";\n    background-color: ", ";\n    color: ", ";\n    box-shadow: ", ";\n    transition-duration: 0.5s;\n    border: 0.3px solid ", ";\n    display: flex;\n    flex-direction: row;\n    justify-content: flex-start;\n    align-items: center;\n    padding: 1rem;\n    border-radius: 1rem;\n    &:hover {\n        border: 1px solid ", ";\n    }\n    input::placeholder {\n        color: ", ";\n    }\n"])), width, theme.BackgroundColor, theme.Color, BaseStyles.Shadow.BottomDefault, BaseStyles.Color.Black0, BaseStyles.Color.Beige2, theme.Color); };
 var textInputStyle = function (theme) { return css(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n    width: 100%;\n    background-color: ", ";\n    color: ", ";\n    font-family: ", ";\n    font-size: 1rem;\n    border: none;\n    outline: none;\n    text-decoration: none;\n"], ["\n    width: 100%;\n    background-color: ", ";\n    color: ", ";\n    font-family: ", ";\n    font-size: 1rem;\n    border: none;\n    outline: none;\n    text-decoration: none;\n"])), theme.BackgroundColor, theme.Color, BaseStyles.Font.FiraCode); };

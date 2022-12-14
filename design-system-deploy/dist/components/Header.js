@@ -18,16 +18,11 @@ import { css } from '@emotion/react';
 import { BaseStyles, Themes } from "../themes";
 import Icon from "./Icon";
 var Header = function (_a) {
-    var themeType = _a.themeType, imgUrl = _a.imgUrl, iconType = _a.iconType, navOptions = _a.navOptions;
+    var _b = _a.themeType, themeType = _b === void 0 ? "lightMode" : _b, imgUrl = _a.imgUrl, _c = _a.iconType, iconType = _c === void 0 ? 'donorRight' : _c, _d = _a.navOptions, navOptions = _d === void 0 ? ["Home", "About", "Reservation", "More"] : _d;
     var theme = themeType === "lightMode" ? Themes.LightMode : Themes.DarkMode;
     return (_jsxs("div", __assign({ className: 'headerWrapper', css: style(theme) }, { children: [_jsx("img", { src: imgUrl, alt: "headerLogo" }), _jsx("div", __assign({ className: 'navWrapper' }, { children: navOptions && navOptions.map(function (item, index) {
                     return _jsx("span", { children: item }, index);
                 }) })), _jsx(Icon, { type: iconType, scale: 2 })] })));
-};
-Header.defaultProps = {
-    themeType: "lightMode",
-    iconType: "donorRight",
-    navOptions: ["Home", "About", "Reservation", "More"]
 };
 var style = function (theme) { return css(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n    width: 100vw;\n    height: 60px;\n    box-shadow: ", ";\n    transition-duration: 0.5s;\n    background-color: ", ";\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    align-items: center;\n    padding: 0 1rem;\n    img {\n        height: 24px;\n    }\n    div {\n        display: flex;\n        flex-direction: row;\n        justify-content: space-between;\n        align-items: center;\n        span {\n            margin-right: 5vw;\n            margin-left: 5vw;\n            font-size: 1.5rem;\n            color: ", ";\n            font-family: ", ";\n            font-weight: ", ";\n        }\n    }\n"], ["\n    width: 100vw;\n    height: 60px;\n    box-shadow: ", ";\n    transition-duration: 0.5s;\n    background-color: ", ";\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    align-items: center;\n    padding: 0 1rem;\n    img {\n        height: 24px;\n    }\n    div {\n        display: flex;\n        flex-direction: row;\n        justify-content: space-between;\n        align-items: center;\n        span {\n            margin-right: 5vw;\n            margin-left: 5vw;\n            font-size: 1.5rem;\n            color: ", ";\n            font-family: ", ";\n            font-weight: ", ";\n        }\n    }\n"])), BaseStyles.Shadow.BottomDefault, theme.BackgroundColor, theme.Color, BaseStyles.Font.FiraCode, BaseStyles.Text.Border1); };
 export default Header;

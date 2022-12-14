@@ -19,7 +19,7 @@ export interface BadgeProps {
 /**
  * 상황에 맞게 타입을 설정하여 사용하세요!
  */
-const Badge = ({ innerText, state, width, type }: BadgeProps) => {
+const Badge = ({ innerText = "Badge InnerText", state = "Access", width = "300px", type ="default" }: BadgeProps) => {
 
     const style = () => css`
     box-shadow: ${BaseStyles.Shadow.BottomDefault};
@@ -128,13 +128,6 @@ const Badge = ({ innerText, state, width, type }: BadgeProps) => {
             <div css={badgeTheme}></div>
         </div>
     )
-}
-
-Badge.defaultProps = {
-    innerText: "Badge InnerText",
-    state: "Access",
-    width: "300px",
-    type: "default",
 }
 
 export default Badge;

@@ -19,7 +19,7 @@ export type HeaderProps = { // interface는 주석을 달 수 없었기에 type�
 }
 type Theme = typeof Themes.LightMode;
 
-const Header = ({ themeType, imgUrl, iconType, navOptions }: HeaderProps) => {
+const Header = ({ themeType = "lightMode", imgUrl, iconType = 'donorRight', navOptions = ["Home", "About", "Reservation", "More"] }: HeaderProps) => {
     const theme = themeType === "lightMode" ? Themes.LightMode : Themes.DarkMode;
 
     return (
@@ -33,12 +33,6 @@ const Header = ({ themeType, imgUrl, iconType, navOptions }: HeaderProps) => {
             <Icon type={iconType} scale={2} />
         </div>
     )
-}
-
-Header.defaultProps = {
-    themeType: "lightMode",
-    iconType: "donorRight",
-    navOptions: ["Home", "About", "Reservation", "More"]
 }
 
 const style = (theme: Theme) => css`

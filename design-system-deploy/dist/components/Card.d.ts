@@ -23,16 +23,5 @@ export interface CardProps {
 /**
  * 다양한 옵션을 잘 선택해서 사용해주세요!
  */
-declare const Card: {
-    ({ themeType, head, icon, title, width, detail, confirmButton, image, imgUrl }: CardProps): import("@emotion/react/jsx-runtime").JSX.Element;
-    defaultProps: {
-        themeType: string;
-        title: string;
-        head: string;
-        width: string;
-        detail: string;
-        confirmButton: boolean;
-        imgUrl: any;
-    };
-};
+declare const Card: ({ themeType, head, icon, title, width, detail, confirmButton, image, imgUrl }: CardProps) => import("@emotion/react/jsx-runtime").JSX.Element;
 export default Card;

@@ -16,7 +16,7 @@ var __assign = (this && this.__assign) || function () {
 import { jsx as _jsx, jsxs as _jsxs } from "@emotion/react/jsx-runtime";
 import { css, keyframes } from '@emotion/react';
 var Icon = function (_a) {
-    var onClick = _a.onClick, type = _a.type, scale = _a.scale, fill = _a.fill, onMouseDown = _a.onMouseDown, onMouseUp = _a.onMouseUp;
+    var onClick = _a.onClick, _b = _a.type, type = _b === void 0 ? "home" : _b, scale = _a.scale, _c = _a.fill, fill = _c === void 0 ? "#000000" : _c, onMouseDown = _a.onMouseDown, onMouseUp = _a.onMouseUp;
     switch (type) {
         case "angleDown":
             return (_jsx("svg", __assign({ width: "10", height: "6", viewBox: "0 0 10 6", fill: "none", xmlns: "http://www.w3.org/2000/svg", css: scaleControl(scale), onClick: function () { return onClick; } }, { children: _jsx("path", { d: "M4.99987 5.25C4.78664 5.25 4.57331 5.17676 4.41081 5.03027L0.244141 1.28027C-0.0813802 0.987305 -0.0813802 0.512695 0.244141 0.219727C0.569662 -0.0732422 1.09701 -0.0732422 1.42253 0.219727L4.99987 3.44062L8.578 0.220312C8.90352 -0.0726564 9.43086 -0.0726564 9.75638 0.220312C10.0819 0.513281 10.0819 0.98789 9.75638 1.28086L5.58971 5.03086C5.42695 5.17734 5.21341 5.25 4.99987 5.25Z", fill: fill }) })));
@@ -67,10 +67,6 @@ var Icon = function (_a) {
         default:
             return null;
     }
-};
-Icon.defaultProps = {
-    type: 'home',
-    fill: "#000000",
 };
 var scaleControl = function (scale) { return css(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n    transform: scale(", ");\n"], ["\n    transform: scale(", ");\n"])), scale); };
 var rotate = keyframes(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n    100% {\n        transform: rotate(360deg);\n    }\n"], ["\n    100% {\n        transform: rotate(360deg);\n    }\n"])));

@@ -17,11 +17,8 @@ import { jsx as _jsx, jsxs as _jsxs } from "@emotion/react/jsx-runtime";
 import { css } from '@emotion/react';
 import { BaseStyles } from "../themes";
 var Breadcrumb = function (_a) {
-    var params = _a.params;
+    var _b = _a.params, params = _b === void 0 ? ["Home"] : _b;
     return (_jsx("div", __assign({ css: style(params) }, { children: paramElement(params) })));
-};
-Breadcrumb.defaultProps = {
-    params: ["Home"],
 };
 var paramElement = function (params) {
     if (params.length > 0 && params.length < 4) {

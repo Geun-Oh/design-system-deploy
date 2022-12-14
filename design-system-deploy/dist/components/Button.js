@@ -21,12 +21,8 @@ import Icon from './Icon';
  * 기본 타입을 선택해 사용하거나 직접 커스텀할 수 있습니다.
  */
 var Button = function (_a) {
-    var onClick = _a.onClick, innerText = _a.innerText, width = _a.width, height = _a.height, theme = _a.theme, iconType = _a.iconType, backgroundColor = _a.backgroundColor, color = _a.color, hoverColor = _a.hoverColor;
+    var onClick = _a.onClick, innerText = _a.innerText, width = _a.width, height = _a.height, theme = _a.theme, _b = _a.iconType, iconType = _b === void 0 ? "none" : _b, _c = _a.backgroundColor, backgroundColor = _c === void 0 ? "#FFFFFF" : _c, color = _a.color, hoverColor = _a.hoverColor;
     return (_jsxs("button", __assign({ css: [style(width, height, backgroundColor, color, hoverColor), themes[theme]], onClick: onClick }, { children: [innerText, _jsx("div", __assign({ css: iconStyle(iconType) }, { children: _jsx(Icon, { type: iconType }) }))] })));
-};
-Button.defaultProps = {
-    iconType: "none",
-    backgroundColor: "#FFFFFF",
 };
 var iconStyle = function (iconType) { return css(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  ", ";\n"], ["\n  ", ";\n"])), iconType === "none" ? null : "padding-left: 16px"); };
 var style = function (width, height, backgroundColor, color, hoverColor) { return css(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  box-shadow: ", ";\n  transition-duration: 0.5s;\n  outline: none;\n  border: none;\n  box-sizing: border-box;\n  background: ", ";\n  color: ", ";\n  width: ", ";\n  height: ", ";\n  font-size: ", ";\n  font-family: ", ";\n  font-weight: ", ";\n  padding: 0.5rem 1rem;\n  border-radius: 1rem;\n  line-height: auto;\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  align-items: center;\n  &:hover {\n    background: ", ";\n  }\n"], ["\n  box-shadow: ", ";\n  transition-duration: 0.5s;\n  outline: none;\n  border: none;\n  box-sizing: border-box;\n  background: ", ";\n  color: ", ";\n  width: ", ";\n  height: ", ";\n  font-size: ", ";\n  font-family: ", ";\n  font-weight: ", ";\n  padding: 0.5rem 1rem;\n  border-radius: 1rem;\n  line-height: auto;\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  align-items: center;\n  &:hover {\n    background: ", ";\n  }\n"])), BaseStyles.Shadow.BottomDefault, backgroundColor || "#ffffff", color || BaseStyles.Color.Black4, width, height, BaseStyles.Text.Heading4, BaseStyles.Font.FiraCode, BaseStyles.Text.Border4, hoverColor || BaseStyles.Color.Beige1); };
