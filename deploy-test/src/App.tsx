@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.css';
-import { Colorpallete } from 'resonance-design-system/dist/stories/Colorpallete';
+import rsnc from 'rsnc';
 
 function App() {
   return (
-    <Colorpallete />   
+    <rsnc.Colorpallete />   
   );
 }
 

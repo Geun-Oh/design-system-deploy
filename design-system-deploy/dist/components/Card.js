@@ -18,12 +18,11 @@ import { css } from '@emotion/react';
 import { BaseStyles, Themes } from "../themes";
 import Icon from "./Icon";
 import Button from "./Button";
-import image1 from "../icons/image1.png";
 /**
  * 다양한 옵션을 잘 선택해서 사용해주세요!
  */
 var Card = function (_a) {
-    var _b = _a.themeType, themeType = _b === void 0 ? "lightMode" : _b, _c = _a.head, head = _c === void 0 ? "Beta" : _c, icon = _a.icon, _d = _a.title, title = _d === void 0 ? "Card Example" : _d, _e = _a.width, width = _e === void 0 ? "300px" : _e, _f = _a.detail, detail = _f === void 0 ? "Example of a card's description. Stick to one or twe sentences." : _f, _g = _a.confirmButton, confirmButton = _g === void 0 ? false : _g, image = _a.image, _h = _a.imgUrl, imgUrl = _h === void 0 ? image1 : _h;
+    var _b = _a.themeType, themeType = _b === void 0 ? "lightMode" : _b, _c = _a.head, head = _c === void 0 ? "Beta" : _c, icon = _a.icon, _d = _a.title, title = _d === void 0 ? "Card Example" : _d, _e = _a.width, width = _e === void 0 ? "300px" : _e, _f = _a.detail, detail = _f === void 0 ? "Example of a card's description. Stick to one or twe sentences." : _f, _g = _a.confirmButton, confirmButton = _g === void 0 ? false : _g, _h = _a.image, image = _h === void 0 ? false : _h, imgUrl = _a.imgUrl;
     var theme = themeType === "lightMode" ? Themes.LightMode : Themes.DarkMode;
     var height;
     var unit;

@@ -49,3 +49,7 @@ Beta version updated...
 - Changed components that return object type because of default props. All components return funtion type from now on.
 - Fixed prop "themeType" of Input component to be optional. 
 - Fixed prop "disabled" of DropDown component to be optional.
+
+### ver-0.4.1(22.12.14)
+
+- Card component image checking hotfix.

@@ -31,7 +31,7 @@ type Unit = "px" | "vh" | "vw" | "%";
 /**
  * 다양한 옵션을 잘 선택해서 사용해주세요!
  */
-const Card = ({ themeType = "lightMode", head = "Beta", icon, title = "Card Example", width = "300px", detail = "Example of a card's description. Stick to one or twe sentences.", confirmButton = false, image, imgUrl = image1 }: CardProps) => {
+const Card = ({ themeType = "lightMode", head = "Beta", icon, title = "Card Example", width = "300px", detail = "Example of a card's description. Stick to one or twe sentences.", confirmButton = false, image = false, imgUrl }: CardProps) => {
     const theme = themeType === "lightMode" ? Themes.LightMode : Themes.DarkMode;
     let height: string;
     let unit: Unit;
