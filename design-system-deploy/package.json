@@ -1,6 +1,6 @@
 {
   "name": "rsnc",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "description": "RESON&CE Design System. Appreciate for your use!",
   "keywords": [
     "react",
@@ -21,6 +21,11 @@
   ],
   "private": false,
   "main": "dist/main/main.js",
+  "module": "dist/main/main.js",
+  "exports": {
+    "import": "./dist/main/main.js",
+    "require": "./dist/main/main.js"
+  },
   "types": "dist/main/main.d.ts",
   "browser": "./browser/specific/main.js",
   "license": "ISC",

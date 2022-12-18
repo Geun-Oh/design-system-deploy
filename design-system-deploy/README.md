@@ -53,3 +53,8 @@ Beta version updated...
 ### ver-0.4.1(22.12.14)
 
 - Card component image checking hotfix.
+
+### ver-0.5.0(22.12.18)
+
+- set module, export routes.
+- package exporting error fixed.
